@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "mybatis-3-config.dtd" >
+<configuration>
+
+	<!-- 配置数据库属性 -->
+<!-- 	<properties resource="jdbc.properties" /> -->
+	
+	<!-- 设置对象的别名 -->
+	<typeAliases>
+		<typeAlias alias="user" type="com.java.entity.User"/>
+	</typeAliases>
+	
+	<!-- 映射文件 -->
+	
+	
+</configuration>

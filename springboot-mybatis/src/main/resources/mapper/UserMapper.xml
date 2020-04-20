@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.java.mapper.UserMapper">
+	
+	<resultMap type="com.java.entity.User" id="UserMapList" >
+		<id column="id" property="id"/>
+		<result column="userName" property="userName" />
+		<result column="password" property="password" />
+	</resultMap>
+	<select id="queryUserById"  resultMap="UserMapList">
+		select * from User  
+		<if test="#{id} != null" >
+			where id = #{id}
+		</if>
+	</select>
+	<select id="queryUsers"  resultMap="UserMapList">
+		select * from User
+	</select>
+	 
+	<insert id="save" parameterType="com.java.entity.User">
+		insert into User(userName,password) values(#{userName},#{password})
+	</insert>
+	
+	<update id="update" parameterType="com.java.entity.User">
+		update user set userName=#{userName},password = #{password} where id = #{id}
+	</update>
+	
+	<delete id="deleteUserById" parameterType="Integer">
+		delete from user where id = #{id}
+	</delete>
+</mapper>
